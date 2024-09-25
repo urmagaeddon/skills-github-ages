@@ -1,0 +1,19 @@
+name: Check Broken Links
+
+on:
+  pull_request:  # Trigger on pull request events
+  push:          # Optional: also trigger on push events
+
+jobs:
+  link_check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Check out the code in the repo
+
+    - name: Install linkchecker
+      run: sudo apt-get install -y linkchecker  # Install linkchecker CLI tool
+
+    - name: Run linkchecker
+      run: linkchecker https://your-github-pages-site.com  # Run link checker against your site
