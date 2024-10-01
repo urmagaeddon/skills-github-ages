@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Check out the code in the repo
+      uses: actions/checkout@v4  # Check out the code in the repo
 
     - name: Install linkchecker
       run: sudo apt-get install -y linkchecker  # Install linkchecker CLI tool
